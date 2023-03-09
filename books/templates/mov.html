@@ -1,0 +1,32 @@
+{% extends 'theme.html' %}
+{% block content %}
+
+<html>
+  <head>
+
+  </head>
+
+  <body>
+  <h1>MovieFinder</h1>
+  <div class="container">
+    <div class="row">
+  {% for item in Movie1 %}
+  <div class="col-md-3">
+  <div class="card" >
+    <img src="{{item.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{item.bname}}</h5>
+      <p hidden class="card-text">{{item.story}}</p>
+  
+    </div>
+  </div>
+</div>
+{% endfor %}
+    </div>
+  </div>
+
+  </body>
+</html>
+{% endblock %}
+
+

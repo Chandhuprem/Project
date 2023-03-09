@@ -1,0 +1,23 @@
+{% extends 'theme.html' %}
+{% block content %}
+<title>Enter your organization details</title>
+<div class="container">
+    
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset>
+        <legend>Form</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <script>
+          function clicked(e)
+          {
+              if(!confirm('Are you sure?')) {
+                  e.preventDefault();
+              }
+          }
+          </script>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div>
+{% endblock %}
